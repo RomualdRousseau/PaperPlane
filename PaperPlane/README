@@ -1,0 +1,33 @@
+
+PaperPlane source release
+=========================
+
+This file contains the following sections:
+
+LICENSE
+GENERAL NOTES
+COMPILING
+
+
+LICENSE
+=======
+
+See COPYING for the GNU GENERAL PUBLIC LICENSE
+
+
+GENERAL NOTES
+=============
+
+A short summary of the file layout:
+
+src/			   		source code
+assets/					gfx and sfx files
+res/					resources
+
+
+COMPILING
+=========
+
+Please follow the instructions provided by Google to install the Android SDK at
+<http://http://developer.android.com/sdk/index.html>.
+
