@@ -21,25 +21,25 @@
 
 package com.rworld.PaperPlane;
 
-import com.rworld.core.v2.graphics.GraphicManager;
-import com.rworld.core.v2.math.Frustrum;
-
 import android.opengl.GLES11;
 import android.opengl.Matrix;
 
+import com.rworld.core.v2.graphics.GraphicManager;
+import com.rworld.core.v2.math.Frustrum;
+
 public class Camera1 {
 
-	public Camera1(GraphicManager graphicManager) {
-	}
-	
-	public void dispose() {
-	}
-	
-	public void render() {
-		Matrix.setLookAtM(mCameraMatrix, 0, 0.0f, 0.0f, 5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-		GLES11.glLoadMatrixf(mCameraMatrix, 0);
-		Frustrum.update();
-	}
-	
-	protected float[] mCameraMatrix = new float[16];
+    public Camera1(GraphicManager graphicManager) {
+    }
+
+    public void dispose() {
+    }
+
+    public void render() {
+        Matrix.setLookAtM(mCameraMatrix, 0, 0.0f, 0.0f, 5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+        GLES11.glLoadMatrixf(mCameraMatrix, 0);
+        Frustrum.update();
+    }
+
+    protected float[] mCameraMatrix = new float[16];
 }

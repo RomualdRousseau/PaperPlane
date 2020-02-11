@@ -25,25 +25,25 @@ import com.rworld.core.v2.Log;
 
 public class Benchmark {
 
-	public void update(float time) {
-		mFrameCount++;
-		mTimerTime += time;
+    public void update(float time) {
+        mFrameCount++;
+        mTimerTime += time;
 
-		if (mTimerTime >= 5.0f) {
-			mLastFPS = (mFrameCount / mTimerTime);
-			mFrameCount = 0;
-			mTimerTime = 0.0f;
-			mMessage.setLength(0);
-			mMessage.append("Benchmark: ").append((int) mLastFPS).append("fps");
-		}
-		if(mLastFPS > 0.0f) {
-			Log.i(mMessage.toString());
-			mLastFPS = 0.0f;
-		}
-	}
-	
-	private int mFrameCount = 0;
-	private float mTimerTime = 0.0f;
-	private float mLastFPS = 0.0f;
-	private StringBuilder mMessage = new StringBuilder();
+        if (mTimerTime >= 5.0f) {
+            mLastFPS = (mFrameCount / mTimerTime);
+            mFrameCount = 0;
+            mTimerTime = 0.0f;
+            mMessage.setLength(0);
+            mMessage.append("Benchmark: ").append((int) mLastFPS).append("fps");
+        }
+        if (mLastFPS > 0.0f) {
+            Log.i(mMessage.toString());
+            mLastFPS = 0.0f;
+        }
+    }
+
+    private int mFrameCount = 0;
+    private float mTimerTime = 0.0f;
+    private float mLastFPS = 0.0f;
+    private StringBuilder mMessage = new StringBuilder();
 }

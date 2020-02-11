@@ -6,12 +6,12 @@ import com.rworld.core.v2.physics.PhysicSystem;
 
 public class JetEngineSystem extends PhysicSystem {
 
-	public JetEngineSystem(GameEntity emitter) {
-		super(2000, 2000, 40, emitter);
-	}
+    public JetEngineSystem(GameEntity emitter) {
+        super(2000, 2000, 40, emitter);
+    }
 
-	@Override
-	public PhysicEntity allocateEntity(PhysicSystem parent) {
-		return new JetEngineEntity(parent);
-	}
+    @Override
+    public PhysicEntity allocateEntity(PhysicSystem parent) {
+        return new JetEngineEntity(parent);
+    }
 }

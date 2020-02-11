@@ -21,26 +21,26 @@
 
 package com.rworld.PaperPlane;
 
-import java.util.Random;
-
 import android.os.Bundle;
 
 import com.rworld.core.v2.GameActivity;
 import com.rworld.core.v2.GameScene;
 
+import java.util.Random;
+
 public class MainActivity extends GameActivity {
 
-	public static final Random random = new Random();
-	
+    public static final Random random = new Random();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	GameActivity.Debug = false;
-    	GameActivity.RenderMeshBoundaries = false;
-    	super.onCreate(savedInstanceState);
+        GameActivity.Debug = false;
+        GameActivity.RenderMeshBoundaries = false;
+        super.onCreate(savedInstanceState);
     }
-    
-	@Override
-	protected GameScene onCreateScreens() {
-		return new Scene1(this);
-	}
+
+    @Override
+    protected GameScene onCreateScreens() {
+        return new Scene1(this);
+    }
 }

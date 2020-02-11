@@ -15,7 +15,7 @@
     <string-array name="theend_messages">
         <item>Done.</item>
     </string-array>
-    
+
     <string name="scene5_message">Bored of 3D? Wanna a bit of old school?</string>
     <string name="scene6_message">Let\'s fly on the wings of a paper dream... hovering the boring reality...</string>
 </resources>

@@ -21,41 +21,40 @@
 
 package com.rworld.PaperPlane;
 
+import android.opengl.GLES11;
+import android.opengl.Matrix;
+
 import com.rworld.core.v2.graphics.GraphicManager;
 import com.rworld.core.v2.math.Frustrum;
 
-import android.opengl.GLES11;
-import android.opengl.Matrix;
-import android.util.FloatMath;
-
 public class Camera2 {
 
-	public float[] position = {0.0f, 0.0f, 0.0f};
-	
-	public Camera2(GraphicManager graphicManager) {
-	}
-	
-	public void dispose() {
-	}
-	
-	public void update(float time) {
-		position[0] = -2.56f + 2.56f * FloatMath.sin(0.62f * mVelocity);
-		position[2] = -mVelocity;
-		mDirection[0] = position[0] + 2.56f * 0.62f * FloatMath.cos(0.62f * mVelocity);
-		mDirection[2] = position[2] - 1.0f;
-		mUp[0] = FloatMath.sin(0.62f * mVelocity);
-		mUp[1] = FloatMath.cos(0.62f * mVelocity);
-		mVelocity += 0.5f * time;
-	}
-	
-	public void render() {
-		Matrix.setLookAtM(mMatrix, 0, position[0], position[1], position[2], mDirection[0], mDirection[1], mDirection[2], mUp[0], mUp[1], mUp[2]);
-		GLES11.glLoadMatrixf(mMatrix, 0);
-		Frustrum.update();
-	}
-	
-	protected float[] mMatrix = new float[16];
-	protected float[] mDirection = {0.0f, 0.0f, 0.0f};
-	protected float[] mUp = {0.0f, 1.0f, 0.0f};
-	protected float mVelocity = 0.0f;
+    public float[] position = {0.0f, 0.0f, 0.0f};
+
+    public Camera2(GraphicManager graphicManager) {
+    }
+
+    public void dispose() {
+    }
+
+    public void update(float time) {
+        position[0] = -2.56f + 2.56f * (float) Math.sin(0.62f * mVelocity);
+        position[2] = -mVelocity;
+        mDirection[0] = position[0] + 2.56f * 0.62f * (float) Math.cos(0.62f * mVelocity);
+        mDirection[2] = position[2] - 1.0f;
+        mUp[0] = (float) Math.sin(0.62f * mVelocity);
+        mUp[1] = (float) Math.cos(0.62f * mVelocity);
+        mVelocity += 0.5f * time;
+    }
+
+    public void render() {
+        Matrix.setLookAtM(mMatrix, 0, position[0], position[1], position[2], mDirection[0], mDirection[1], mDirection[2], mUp[0], mUp[1], mUp[2]);
+        GLES11.glLoadMatrixf(mMatrix, 0);
+        Frustrum.update();
+    }
+
+    protected float[] mMatrix = new float[16];
+    protected float[] mDirection = {0.0f, 0.0f, 0.0f};
+    protected float[] mUp = {0.0f, 1.0f, 0.0f};
+    protected float mVelocity = 0.0f;
 }
