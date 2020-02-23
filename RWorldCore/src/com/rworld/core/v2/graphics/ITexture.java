@@ -4,7 +4,7 @@ public interface ITexture {
 
 	void release();
 	
-	public void bind();
+	void bind();
 	
-	public void ensureData(TextureBuilder builder);	
+	void ensureData(TextureBuilder builder);
 }

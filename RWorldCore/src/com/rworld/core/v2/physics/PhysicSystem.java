@@ -9,7 +9,7 @@ public abstract class PhysicSystem {
 
 	public GameEntity emitter = null;
 	
-	public ArrayList<PhysicEntity> entities = new ArrayList<PhysicEntity>();
+	public final ArrayList<PhysicEntity> entities = new ArrayList<PhysicEntity>();
 	
 	public abstract PhysicEntity allocateEntity(PhysicSystem parent);
 	

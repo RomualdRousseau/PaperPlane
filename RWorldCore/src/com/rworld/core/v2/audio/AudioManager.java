@@ -88,6 +88,6 @@ public class AudioManager {
 	protected android.media.AudioManager mAudioManager = null;
 	protected MediaPlayer mMediaPlayer = null;
 	protected SoundPool mSoundPool = null;
-	protected int mPlayingStreamId[] = new int[5];
+    protected int[] mPlayingStreamId = new int[5];
 	protected int mCurrentPlayingStream = 0;
 }

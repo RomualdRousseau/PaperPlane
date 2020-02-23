@@ -50,11 +50,8 @@ public abstract class MeshBase implements IMesh {
 	
 	@Override
 	public boolean draw(GameEntity entity, boolean checkVisibility) {
-		if(!isBBoxVisible(entity, checkVisibility, GameActivity.RenderMeshBoundaries)) {
-			return false;
-		}
-		return true;
-	}
+        return isBBoxVisible(entity, checkVisibility, GameActivity.RenderMeshBoundaries);
+    }
 	
 	@Override
 	public boolean draw(List<? extends GameEntity> entities, boolean checkVisibility) {

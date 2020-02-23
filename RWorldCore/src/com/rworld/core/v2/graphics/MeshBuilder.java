@@ -164,7 +164,7 @@ public abstract class MeshBuilder {
 		
 		@Override
 		public boolean equals(Object o) {
-			return (o instanceof Element) ? equals((Element) o) : false;
+			return (o instanceof Element) && equals((Element) o);
 		}
 
 		@Override
@@ -182,7 +182,7 @@ public abstract class MeshBuilder {
 	        */
 	        return hash;
 		}
-	};
+	}
 
 	protected ArrayList<Element> mElements = new ArrayList<Element>();
 	protected ArrayList<Short> mIndexes = new ArrayList<Short>();
