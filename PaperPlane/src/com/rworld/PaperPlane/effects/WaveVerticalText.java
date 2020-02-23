@@ -16,7 +16,7 @@ public class WaveVerticalText {
 
         mVelocity = new float[1024];
         for (int i = 0; i < 1024; i++) {
-            mVelocity[i] = amplitude * (float) Math.sin(period * i / GraphicManager.displayHeight);
+            mVelocity[i] = amplitude * (float) Math.sin(period * i / 1024);
         }
 
         mPosition[0] = center;
@@ -55,7 +55,7 @@ public class WaveVerticalText {
                 mGlyph[0] = (c & 15) * mFont.width;
                 mGlyph[1] = ((c >> 4) + 1) * mFont.height;
                 GLES11.glTexParameteriv(GLES11.GL_TEXTURE_2D, GLES11Ext.GL_TEXTURE_CROP_RECT_OES, mGlyph, 0);
-                GLES11Ext.glDrawTexfOES(mRect[0] + mVelocity[mRect[1] + mRect[3]], mRect[1], 0.0f, mRect[2], mRect[3]);
+                GLES11Ext.glDrawTexfOES(mRect[0] + mVelocity[(mRect[1] + mRect[3]) % 1024], mRect[1], 0.0f, mRect[2], mRect[3]);
             }
             mRect[1] -= mRect[3];
         }
